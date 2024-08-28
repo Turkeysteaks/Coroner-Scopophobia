@@ -2,15 +2,16 @@
 
 using HarmonyLib;
 using BepInEx.Logging;
+using Coroner;
 
-namespace GarageDoorFix
+namespace CoronerMimics
 {
     public static class PluginInfo
     {
-        public const string PLUGIN_ID = "GarageDoorFix";
-        public const string PLUGIN_NAME = "GarageDoorFix";
+        public const string PLUGIN_ID = "coroner.mimics";
+        public const string PLUGIN_NAME = "Coroner - Mimics";
         public const string PLUGIN_VERSION = "1.0.0";
-        public const string PLUGIN_GUID = "com.elitemastereric.garagedoorfix";
+        public const string PLUGIN_GUID = "com.elitemastereric.coroner.mimics";
     }
 
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
@@ -20,7 +21,7 @@ namespace GarageDoorFix
 
         public ManualLogSource PluginLogger;
 
-        public PluginConfig PluginConfig;
+        public AdvancedCauseOfDeath MIMIC;
 
         private void Awake()
         {
@@ -35,13 +36,7 @@ namespace GarageDoorFix
             // Plugin startup logic
             PluginLogger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} ({PluginInfo.PLUGIN_GUID}) is loaded!");
 
-            LoadConfig();
-        }
-
-        private void LoadConfig()
-        {
-            PluginConfig = new PluginConfig();
-            PluginConfig.BindConfig(Config);
+            MIMIC = AdvancedCauseOfDeath.Build("DeathEnemyMimic");
         }
     }
 }

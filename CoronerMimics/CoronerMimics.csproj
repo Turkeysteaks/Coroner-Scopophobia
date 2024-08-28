@@ -4,12 +4,12 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     
     <Company>EliteMasterEric</Company>
-    <AssemblyName>GarageDoorFix</AssemblyName>
-    <GUID>com.elitemastereric.GarageDoorFix</GUID>
+    <AssemblyName>Coroner - Mimics</AssemblyName>
+    <GUID>com.elitemastereric.coroner.mimics</GUID>
     <Version>1.0.0</Version>
 
-    <Title>GarageDoorFix</Title>
-    <Description>Rework the Performance Report with new info, including cause of death.</Description>
+    <Title>Coroner - Mimics</Title>
+    <Description>Provides integration between Coroner and Mimics.</Description>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
@@ -32,6 +32,14 @@
     <Reference Include="Assembly-CSharp">
       <Private>false</Private>
       <HintPath>..\include\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Coroner">
+      <Private>false</Private>
+      <HintPath>..\include\Coroner.dll</HintPath>
+    </Reference>
+    <Reference Include="Mimics">
+      <Private>false</Private>
+      <HintPath>..\include\Mimics.dll</HintPath>
     </Reference>
     <Reference Include="DissonanceVoip">
       <Private>false</Private>
