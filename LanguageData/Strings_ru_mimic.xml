@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+    <tags>
+        <tag language="ru" />
+    </tags>
+    <strings>
+        <!--
+            Translation Notes:
+            This is the default localization file for Coroner.
+            
+            By default, any of the `FunnyNote` or `Death` strings are dynamically chosen at random.
+            If the `SeriousDeathMessages` option is enabled, the first `Death` message found in the file is used,
+                so make this one literal and specific.
+            The other ones can be puns or jokes, and options can be added or removed as needed, just make sure
+                to keep the correct tags, and make sure that there is at least one message for each `Death` type.
+        -->
+
+        <!-- TN: Killed by a Mimic -->
+        <DeathEnemyMimic text="Был съеден Мимиком." />
+        <DeathEnemyMimic text="Наступил момент, когда зашёл не в ту дверь." />  <!-- RU-TN: Russian meme with Kirkorov -->
+        <DeathEnemyMimic text="Выбрал не тот Пожарный Выход." />
+        <DeathEnemyMimic text="Постучал в лицо Мимика." />
+    </strings>
+</base>
