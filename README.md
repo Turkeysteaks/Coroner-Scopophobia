@@ -1,4 +1,4 @@
-# CoronerMimics
+# Coroner Siren Head
 
 A plugin which provides integration between Coroner and Siren Head.
 
