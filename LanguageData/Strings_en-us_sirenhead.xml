@@ -16,10 +16,13 @@
                 to keep the correct tags, and make sure that there is at least one message for each `Death` type.
         -->
 
-        <!-- TN: Killed by a Mimic -->
-        <DeathEnemySirenHead text="Got swallowed by a SirenHead." />
-        <DeathEnemySirenHead text="Picked the wrong door." />
-        <DeathEnemySirenHead text="Went through the wrong Fire Exit." />
-        <DeathEnemySirenHead text="Got duped by a Mimic." />
+        <!-- TN: Killed by Siren Head. -->
+        <DeathEnemySirenHead text="Eaten by Siren Head." />
+        <DeathEnemySirenHead text="Got swallowed by Siren Head." />
+        <DeathEnemySirenHead text="Crushed by Siren Head." />
+        <DeathEnemySirenHead text="NINE. EIGHTEEN. ONE. CHILD. SEVENTEEN. REMOVE. VILE." /> <!-- TN: Reference to Trevor Henderson's caption on the first Siren Head image. -->
+        <DeathEnemySirenHead text="Rushed towards the hurricane siren." />
+        <DeathEnemySirenHead text="Mistook it for a tree." />
+        <DeathEnemySirenHead text="Brain damage and ruptured eardrums." />
     </strings>
 </base>
