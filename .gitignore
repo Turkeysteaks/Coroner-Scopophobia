@@ -3,4 +3,4 @@ build/
 include/
 Releases/*
 Releases/*.*
-!Releases/build.bat
+!Releases/build.*

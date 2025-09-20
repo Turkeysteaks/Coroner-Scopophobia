@@ -1,7 +1,8 @@
 # CoronerMimics
 
-A plugin which provides integration between Coroner and Mimics.
+A plugin which provides integration between Coroner and Siren Head.
 
 ## Credits
-- EliteMasterEric: Programming
-- Ceva: Playtesting
+- EliteMasterEric: Creating Coroner & CoronerMimics
+- Ccode: Creating Siren Head in Lethal Company
+- Turkeysteaks: Adapting CoronerMimics for Siren Head
