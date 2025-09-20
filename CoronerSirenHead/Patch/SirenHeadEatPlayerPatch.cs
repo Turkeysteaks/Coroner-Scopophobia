@@ -1,17 +1,17 @@
 using System;
 using System.Collections;
 using HarmonyLib;
-using Mimics;
+using LethalSirenHead.Enemy;
 
-namespace CoronerMimics.Patch {
+namespace CoronerSirenHead.Patch {
 
-    [HarmonyPatch(typeof(MimicDoor))]
-    [HarmonyPatch("Attack")]
-    class MimicDoorAttackPatch {
-        public static void Postfix(MimicDoor __instance, int playerId, ref IEnumerator __result) {
+    [HarmonyPatch(typeof(SirenHeadAI))]
+    [HarmonyPatch("EatPlayer")]
+    class SirenHeadEatPlayerPatch {
+        public static void Postfix(SirenHeadAI __instance, ulong player, ref IEnumerator __result) {
             try {
 		        Action prefixAction = () => { Console.WriteLine("--> beginning"); };
-		        Action postfixAction = () => { HandleMimicKill(playerId); };
+		        Action postfixAction = () => { HandleSirenHeadKill(player); };
 		        Action<object> preItemAction = (item) => { Console.WriteLine($"--> before {item}"); };
 		        Action<object> postItemAction = (item) => { Console.WriteLine($"--> after {item}"); };
 		        Func<object, object> itemAction = (item) =>
@@ -33,18 +33,18 @@ namespace CoronerMimics.Patch {
             }
             catch (System.Exception e)
             {
-                Plugin.Instance.PluginLogger.LogError("Error in MimicDoorAttackPatch.Postfix: " + e);
+                Plugin.Instance.PluginLogger.LogError("Error in SirenHeadEatPlayerPatch.Postfix: " + e);
                 Plugin.Instance.PluginLogger.LogError(e.StackTrace);
             }
         }
 
-        private static void HandleMimicKill(int playerId) {
-            Plugin.Instance.PluginLogger.LogDebug("Player was killed by mimic! Processing...");
+        private static void HandleSirenHeadKill(ulong playerId) {
+            Plugin.Instance.PluginLogger.LogDebug("Player was killed by Siren Head! Processing...");
             var player = StartOfRound.Instance.allPlayerScripts[playerId];
 
             // if (player.isPlayerDead && player.causeOfDeath == CauseOfDeath.Unknown) {
-            Plugin.Instance.PluginLogger.LogDebug($"Player {playerId} was killed by Mimic! Setting cause of death...");
-            Coroner.API.SetCauseOfDeath(player, Plugin.Instance.MIMIC);
+            Plugin.Instance.PluginLogger.LogDebug($"Player {playerId} was killed by Siren Head! Setting cause of death...");
+            Coroner.API.SetCauseOfDeath(player, Plugin.Instance.SIREN_HEAD);
             // }
         }
     }

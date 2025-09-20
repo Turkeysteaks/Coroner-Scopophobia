@@ -3,17 +3,22 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     
-    <Company>EliteMasterEric</Company>
-    <AssemblyName>Coroner - Mimics</AssemblyName>
-    <GUID>com.elitemastereric.coroner.mimics</GUID>
+    <Company>Turkeysteaks</Company>
+    <AssemblyName>Coroner - SirenHead</AssemblyName>
+    <GUID>Turkeysteaks.coroner.sirenhead</GUID>
     <Version>1.0.0</Version>
 
-    <Title>Coroner - Mimics</Title>
-    <Description>Provides integration between Coroner and Mimics.</Description>
+    <Title>Coroner - SirenHead</Title>
+    <Description>Provides integration between Coroner and Siren Head.</Description>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <RootNamespace>CoronerSirenHead</RootNamespace>
+    <Nullable>enable</Nullable>
+    <PackageId>Coroner - SirenHead</PackageId>
+    <Authors>Coroner - SirenHead</Authors>
+    <Product>Coroner - Siren Head</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,9 +42,9 @@
       <Private>false</Private>
       <HintPath>..\include\Coroner.dll</HintPath>
     </Reference>
-    <Reference Include="Mimics">
+    <Reference Include="LethalSirenHead">
       <Private>false</Private>
-      <HintPath>..\include\Mimics.dll</HintPath>
+      <HintPath>..\include\LethalSirenHead.dll</HintPath>
     </Reference>
     <Reference Include="DissonanceVoip">
       <Private>false</Private>
@@ -106,8 +111,8 @@
     <EmbeddedResource Remove="build\obj\**" />
     <None Remove="build\obj\**" />
   </ItemGroup>
-  <Target Name="PostBuild" BeforeTargets="PostBuildEvent">
-    <Exec Command="del %22$(TargetDir)$(TargetName).deps.json%22" />
-    <Exec Command="del %22$(TargetDir)$(TargetName).pdb%22" />
-  </Target>
+<!--  <Target Name="PostBuild" BeforeTargets="PostBuildEvent">-->
+<!--    <Exec Command="del %22$(TargetDir)$(TargetName).deps.json%22" />-->
+<!--    <Exec Command="del %22$(TargetDir)$(TargetName).pdb%22" />-->
+<!--  </Target>-->
 </Project>

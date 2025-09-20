@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
     <tags>
-        <tag language="ru" />
+        <tag language="en" />
     </tags>
     <strings>
         <!--
@@ -17,9 +17,9 @@
         -->
 
         <!-- TN: Killed by a Mimic -->
-        <DeathEnemyMimic text="Был съеден Мимиком." />
-        <DeathEnemyMimic text="Наступил момент, когда зашёл не в ту дверь." />  <!-- RU-TN: Russian meme with Kirkorov -->
-        <DeathEnemyMimic text="Выбрал не тот Пожарный Выход." />
-        <DeathEnemyMimic text="Постучал в лицо Мимика." />
+        <DeathEnemySirenHead text="Got swallowed by a SirenHead." />
+        <DeathEnemySirenHead text="Picked the wrong door." />
+        <DeathEnemySirenHead text="Went through the wrong Fire Exit." />
+        <DeathEnemySirenHead text="Got duped by a Mimic." />
     </strings>
 </base>

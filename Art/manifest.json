@@ -1,11 +1,11 @@
 {
-    "name": "CoronerMimics",
+    "name": "CoronerSirenHead",
     "version_number": "1.0.0",
-    "website_url": "https://github.com/EliteMasterEric/Coroner-Mimics",
-    "description": "Provides integration between Coroner and Mimics.",
+    "website_url": "https://github.com/Turkeysteaks/Coroner-SirenHead",
+    "description": "Provides integration between Coroner and Siren Head.",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100",
-        "EliteMasterEric-Coroner-2.1.0",
-        "x753-Mimics-2.6.4"
+        "EliteMasterEric-Coroner-2.3.0",
+        "Ccode_lang-SirenHead-2.0.4"
     ]
 }

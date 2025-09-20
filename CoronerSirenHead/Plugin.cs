@@ -3,15 +3,16 @@
 using HarmonyLib;
 using BepInEx.Logging;
 using Coroner;
+using CoronerSirenHead.Patch;
 
-namespace CoronerMimics
+namespace CoronerSirenHead
 {
     public static class PluginInfo
     {
-        public const string PLUGIN_ID = "coroner.mimics";
-        public const string PLUGIN_NAME = "Coroner - Mimics";
+        public const string PLUGIN_ID = "coroner.sirenhead";
+        public const string PLUGIN_NAME = "Coroner - Siren Head";
         public const string PLUGIN_VERSION = "1.0.0";
-        public const string PLUGIN_GUID = "com.elitemastereric.coroner.mimics";
+        public const string PLUGIN_GUID = "Turkeysteaks.coroner.sirenhead";
     }
 
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
@@ -20,8 +21,8 @@ namespace CoronerMimics
         public static Plugin Instance { get; private set; }
 
         public ManualLogSource PluginLogger;
-
-        public AdvancedCauseOfDeath MIMIC;
+        public string KEY = "DeathEnemySirenHead";
+        public AdvancedCauseOfDeath SIREN_HEAD;
 
         private void Awake()
         {
@@ -32,11 +33,14 @@ namespace CoronerMimics
             // Apply Harmony patches (if any exist)
             Harmony harmony = new Harmony(PluginInfo.PLUGIN_GUID);
             harmony.PatchAll();
+            harmony.PatchAll(typeof(SirenHeadEatPlayerPatch));
 
             // Plugin startup logic
             PluginLogger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} ({PluginInfo.PLUGIN_GUID}) is loaded!");
-
-            MIMIC = AdvancedCauseOfDeath.Build("DeathEnemyMimic");
+            if(!API.IsRegistered(KEY))
+            {
+                SIREN_HEAD = API.Register(KEY);
+            }
         }
     }
 }
