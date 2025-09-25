@@ -1,17 +1,16 @@
 using System;
 using System.Collections;
 using HarmonyLib;
-using LethalSirenHead.Enemy;
 
-namespace CoronerSirenHead.Patch {
+namespace CoronerScopophobia.Patch {
 
-    [HarmonyPatch(typeof(SirenHeadAI))]
-    [HarmonyPatch("EatPlayer")]
-    class SirenHeadEatPlayerPatch {
-        public static void Postfix(SirenHeadAI __instance, ulong player, ref IEnumerator __result) {
+    [HarmonyPatch(typeof(ShyGuy.AI.ShyGuyAI))]
+    [HarmonyPatch("KillPlayerAnimation")]
+    class KillPlayerAnimationPatch {
+        public static void Postfix(ShyGuy.AI.ShyGuyAI __instance, ulong player, ref IEnumerator __result) {
             try {
 		        Action prefixAction = () => { Console.WriteLine("--> beginning"); };
-		        Action postfixAction = () => { HandleSirenHeadKill(player); };
+		        Action postfixAction = () => { HandleShyGuyKill(player); };
 		        Action<object> preItemAction = (item) => { Console.WriteLine($"--> before {item}"); };
 		        Action<object> postItemAction = (item) => { Console.WriteLine($"--> after {item}"); };
 		        Func<object, object> itemAction = (item) =>
@@ -33,18 +32,18 @@ namespace CoronerSirenHead.Patch {
             }
             catch (System.Exception e)
             {
-                Plugin.Instance.PluginLogger.LogError("Error in SirenHeadEatPlayerPatch.Postfix: " + e);
+                Plugin.Instance.PluginLogger.LogError("Error in KillPlayerAnimationPatch.Postfix: " + e);
                 Plugin.Instance.PluginLogger.LogError(e.StackTrace);
             }
         }
 
-        private static void HandleSirenHeadKill(ulong playerId) {
-            Plugin.Instance.PluginLogger.LogDebug("Player was killed by Siren Head! Processing...");
+        private static void HandleShyGuyKill(ulong playerId) {
+            Plugin.Instance.PluginLogger.LogDebug("Player was killed by Shy Guy! Processing...");
             var player = StartOfRound.Instance.allPlayerScripts[playerId];
 
             // if (player.isPlayerDead && player.causeOfDeath == CauseOfDeath.Unknown) {
-            Plugin.Instance.PluginLogger.LogDebug($"Player {playerId} was killed by Siren Head! Setting cause of death...");
-            Coroner.API.SetCauseOfDeath(player, Plugin.Instance.SIREN_HEAD);
+            Plugin.Instance.PluginLogger.LogDebug($"Player {playerId} was killed by Shy Guy! Setting cause of death...");
+            Coroner.API.SetCauseOfDeath(player, Plugin.Instance.SHY_GUY);
             // }
         }
     }
