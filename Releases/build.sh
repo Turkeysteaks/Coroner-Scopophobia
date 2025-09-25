@@ -7,7 +7,9 @@ cp ../CoronerScopophobia/build/bin/Debug/*.dll ./
 mkdir -p ./BepInEx/config/EliteMasterEric-Coroner/ && cp ../LanguageData/* ./BepInEx/config/EliteMasterEric-Coroner/
 
 #Compress everything except for this file into a .zip
-zip -r ./CoronerScopophobia.zip ./* -x ./build.*
+output="CoronerScopophobia_v$(jq -r .version_number manifest.json).zip"
+echo "${output}"
+zip -r ./${output}.zip ./* -x ./build.*
 
 #CAREFUL. Deletes everything in the folder except for the new zip and this file.
-find ../Releases/* -not -name 'build.sh' -not -name 'CoronerScopophobia.zip' -delete
+find ../Releases/* -not -name 'build.sh' -not -name ${output} -delete
