@@ -3,16 +3,16 @@
 using HarmonyLib;
 using BepInEx.Logging;
 using Coroner;
-using CoronerSirenHead.Patch;
+using CoronerScopophobia.Patch;
 
-namespace CoronerSirenHead
+namespace CoronerScopophobia
 {
     public static class PluginInfo
     {
-        public const string PLUGIN_ID = "coroner.sirenhead";
-        public const string PLUGIN_NAME = "Coroner - Siren Head";
+        public const string PLUGIN_ID = "coroner.scopophobia";
+        public const string PLUGIN_NAME = "Coroner - Scopophobia";
         public const string PLUGIN_VERSION = "1.0.0";
-        public const string PLUGIN_GUID = "Turkeysteaks.coroner.sirenhead";
+        public const string PLUGIN_GUID = "Turkeysteaks.coroner.scopophobia";
     }
 
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
@@ -21,8 +21,8 @@ namespace CoronerSirenHead
         public static Plugin Instance { get; private set; }
 
         public ManualLogSource PluginLogger;
-        public string KEY = "DeathEnemySirenHead";
-        public AdvancedCauseOfDeath SIREN_HEAD;
+        public string KEY = "DeathEnemyShyGuy";
+        public AdvancedCauseOfDeath SHY_GUY;
 
         private void Awake()
         {
@@ -33,13 +33,12 @@ namespace CoronerSirenHead
             // Apply Harmony patches (if any exist)
             Harmony harmony = new Harmony(PluginInfo.PLUGIN_GUID);
             harmony.PatchAll();
-            harmony.PatchAll(typeof(SirenHeadEatPlayerPatch));
 
             // Plugin startup logic
             PluginLogger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} ({PluginInfo.PLUGIN_GUID}) is loaded!");
             if(!API.IsRegistered(KEY))
             {
-                SIREN_HEAD = API.Register(KEY);
+                SHY_GUY = API.Register(KEY);
             }
         }
     }

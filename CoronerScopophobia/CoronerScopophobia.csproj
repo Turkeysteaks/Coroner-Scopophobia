@@ -4,21 +4,20 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     
     <Company>Turkeysteaks</Company>
-    <AssemblyName>Coroner - SirenHead</AssemblyName>
+    <AssemblyName>Coroner - Scopophobia</AssemblyName>
     <GUID>Turkeysteaks.coroner.sirenhead</GUID>
     <Version>1.0.0</Version>
 
-    <Title>Coroner - SirenHead</Title>
-    <Description>Provides integration between Coroner and Siren Head.</Description>
+    <Title>Coroner - Scopophobia</Title>
+    <Description>Provides integration between Coroner and Scopophobia.</Description>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <RootNamespace>CoronerSirenHead</RootNamespace>
     <Nullable>enable</Nullable>
-    <PackageId>Coroner - SirenHead</PackageId>
-    <Authors>Coroner - SirenHead</Authors>
-    <Product>Coroner - Siren Head</Product>
+    <PackageId>Coroner - Scopophobia</PackageId>
+    <Authors>Coroner - Scopophobia</Authors>
+    <Product>Coroner - Scopophobia</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,9 +41,9 @@
       <Private>false</Private>
       <HintPath>..\include\Coroner.dll</HintPath>
     </Reference>
-    <Reference Include="LethalSirenHead">
+    <Reference Include="Scopophobia">
       <Private>false</Private>
-      <HintPath>..\include\LethalSirenHead.dll</HintPath>
+      <HintPath>..\include\Scopophobia.dll</HintPath>
     </Reference>
     <Reference Include="DissonanceVoip">
       <Private>false</Private>
