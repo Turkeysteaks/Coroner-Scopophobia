@@ -2,7 +2,7 @@
   "name": "CoronerScopophobia",
   "version_number": "1.0.1",
   "website_url": "https://github.com/Turkeysteaks/Coroner-Scopophobia",
-  "description": "Provides integration between Coroner and Scopophobia (Shy Guy. Currently only in English, but I welcome translations.",
+  "description": "Provides integration between Coroner and Scopophobia (Shy Guy). Currently only in English, but I welcome translations.",
   "dependencies": [
     "BepInEx-BepInExPack-5.4.2100",
     "EliteMasterEric-Coroner-2.3.0",
