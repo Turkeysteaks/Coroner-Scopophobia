@@ -11,7 +11,7 @@ namespace CoronerScopophobia
     {
         public const string PLUGIN_ID = "coroner.scopophobia";
         public const string PLUGIN_NAME = "Coroner - Scopophobia";
-        public const string PLUGIN_VERSION = "1.0.0";
+        public const string PLUGIN_VERSION = "1.0.1";
         public const string PLUGIN_GUID = "Turkeysteaks.coroner.scopophobia";
     }
 
