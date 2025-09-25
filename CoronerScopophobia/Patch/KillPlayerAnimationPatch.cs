@@ -5,12 +5,12 @@ using HarmonyLib;
 namespace CoronerScopophobia.Patch {
 
     [HarmonyPatch(typeof(ShyGuy.AI.ShyGuyAI))]
-    [HarmonyPatch("KillPlayerAnimation")]
+    [HarmonyPatch("killPlayerAnimation")]
     class KillPlayerAnimationPatch {
-        public static void Postfix(ShyGuy.AI.ShyGuyAI __instance, ulong player, ref IEnumerator __result) {
+        public static void Postfix(ShyGuy.AI.ShyGuyAI __instance, ulong playerId, ref IEnumerator __result) {
             try {
 		        Action prefixAction = () => { Console.WriteLine("--> beginning"); };
-		        Action postfixAction = () => { HandleShyGuyKill(player); };
+		        Action postfixAction = () => { HandleShyGuyKill(playerId); };
 		        Action<object> preItemAction = (item) => { Console.WriteLine($"--> before {item}"); };
 		        Action<object> postItemAction = (item) => { Console.WriteLine($"--> after {item}"); };
 		        Func<object, object> itemAction = (item) =>
