@@ -9,7 +9,7 @@ mkdir -p ./BepInEx/config/EliteMasterEric-Coroner/ && cp ../LanguageData/* ./Bep
 #Compress everything except for this file into a .zip
 output="CoronerScopophobia_v$(jq -r .version_number manifest.json).zip"
 echo "${output}"
-zip -r ./${output}.zip ./* -x ./build.*
+zip -r ./${output} ./* -x ./build.*
 
 #CAREFUL. Deletes everything in the folder except for the new zip and this file.
 find ../Releases/* -not -name 'build.sh' -not -name ${output} -delete
